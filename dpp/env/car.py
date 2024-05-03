@@ -100,11 +100,11 @@ class SimpleCar:
         self.w4 = transform(x, y, 0.2*self.l, 0.3*self.l, theta, 4)
         
         model = [
-            Rectangle(self.c4, self.carl, self.carw, degrees(theta), fc='y', ec='k'),
-            Rectangle(self.w1, self.whll, self.whlw, degrees(theta+phi), fc='k', ec='k'),
-            Rectangle(self.w2, self.whll, self.whlw, degrees(theta+phi), fc='k', ec='k'),
-            Rectangle(self.w3, self.whll, self.whlw, degrees(theta), fc='k', ec='k'),
-            Rectangle(self.w4, self.whll, self.whlw, degrees(theta), fc='k', ec='k'),
+            Rectangle(self.c4, self.carl, self.carw, angle=degrees(theta), fc='y', ec='k'),
+            Rectangle(self.w1, self.whll, self.whlw, angle=degrees(theta+phi), fc='k', ec='k'),
+            Rectangle(self.w2, self.whll, self.whlw, angle=degrees(theta+phi), fc='k', ec='k'),
+            Rectangle(self.w3, self.whll, self.whlw, angle=degrees(theta), fc='k', ec='k'),
+            Rectangle(self.w4, self.whll, self.whlw, angle=degrees(theta), fc='k', ec='k'),
             Arrow(x, y, 1.1*self.carl*cos(theta), 1.1*self.carl*sin(theta), width=0.1, color='r')
         ]
 
