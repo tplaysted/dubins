@@ -8,7 +8,7 @@ import argparse
 from dpp.env.grid import Grid
 from dpp.env.car import SimpleCar
 from dpp.env.environment import Environment
-from dpp.test_cases.cases import TestCase
+from dpp.test_cases.cases import TestCase, MRNTestCase
 from dpp.utils.utils import plot_a_car
 from dpp.methods.hybrid_astar import HybridAstar
 
@@ -17,13 +17,13 @@ from time import time
 
 def main(heu=1, reverse=False, extra=False, grid_on=False):
 
-    tc = TestCase()
+    tc = MRNTestCase()
 
-    env = Environment(tc.obs)
+    env = Environment(tc.obs, lx=5, ly=4)
 
-    car = SimpleCar(env, tc.start_pos, tc.end_pos)
+    car = SimpleCar(env, tc.start_pos, tc.end_pos, l=0.15, max_phi=0.7)
 
-    grid = Grid(env)
+    grid = Grid(env, cell_size=0.1)
     
     hastar = HybridAstar(car, grid, reverse)
 

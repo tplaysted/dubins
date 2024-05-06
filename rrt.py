@@ -5,7 +5,7 @@ import matplotlib.animation as animation
 
 from dpp.env.car import SimpleCar
 from dpp.env.environment import Environment
-from dpp.test_cases.cases import TestCase
+from dpp.test_cases.cases import TestCase, MRNTestCase
 from dpp.utils.utils import plot_a_car
 from dpp.methods.rrt import RRT
 
@@ -14,11 +14,11 @@ from time import time
 
 def main():
 
-    tc = TestCase()
+    tc = MRNTestCase()
 
-    env = Environment(tc.obs)
+    env = Environment(tc.obs, lx=5, ly=4)
 
-    car = SimpleCar(env, tc.start_pos, tc.end_pos)
+    car = SimpleCar(env, tc.start_pos2, tc.end_pos2, l=0.15, max_phi=1)
 
     rrt = RRT(car)
 
